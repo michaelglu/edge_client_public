@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AREdgeClient</string>
+    <string name="title_activity_ar">ArActivity</string>
+    <string name="title_activity_ar2">ArActivity2</string>
+</resources>

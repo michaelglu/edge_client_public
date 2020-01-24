@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.aredgeclient"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation "com.google.ar.sceneform:core:1.14.0"
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.14.0"
+    implementation 'com.google.ar.sceneform:assets:1.14.0'
+    implementation "com.google.ar.sceneform:animation:1.14.0"
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}
+
+
+sceneform.asset('sampledata/Walking.fbx',
+        'default',
+        'sampledata/Walking.sfa',
+        'src/main/assets/Walking')
+
+sceneform.asset('sampledata/andy_dance.fbx',
+        'default',
+        'sampledata/andy_dance.sfa',
+        'src/main/assets/andy_dance',
+        ['sampledata/andy_wave_l.fbx', 'sampledata/andy_wave_r.fbx'])
+
+sceneform.asset('sampledata/Duck.glb',
+        'default',
+        'sampledata/Duck.sfa',
+        'src/main/assets/Duck')
+
+
+sceneform.asset('sampledata/Cybertruck.glb',
+        'default',
+        'sampledata/Cybertruck.sfa',
+        'src/main/assets/Cybertruck')
+
+sceneform.asset('sampledata/tower.glb',
+        'default',
+        'sampledata/tower.sfa',
+        'src/main/assets/tower')
